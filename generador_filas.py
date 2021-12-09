@@ -40,6 +40,7 @@ def generar_zbs(id_zbs, tipo, sector):
                 "f_desde": f_desde, "activo": activo}
     return fila_zbs
 
+
 def generar_cias(id_cias,especialidad,sector,zbs):
 
     f_start = datetime.datetime(2000, 1, 1)
@@ -57,4 +58,14 @@ def generar_cias(id_cias,especialidad,sector,zbs):
     return fila_cias
 
 
+def generar_usuario(id_u,sexo,nacimiento,zbs,sector,cias):
 
+    fila_usuario = {"id": id_u, "active": True, "sexo": sexo, "nacimiento_dt": nacimiento,
+                    "zbs": zbs, "sector_cd": sector, "cias_cd": cias}
+    return fila_usuario
+
+
+def generar_eq(id_o,id_n,dias):
+
+    fila_eq = {"id_antiguo": id_o, "id_nuevo": id_n, "dias_desplazados": dias}
+    return fila_eq
